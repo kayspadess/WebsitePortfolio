@@ -16,11 +16,11 @@ export default function Nav() {
 
   return (
     <header className="border-b border-neutral-800 bg-neutral-950 sticky top-0 z-50">
-      <nav className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <nav className="max-w-4xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
         <Link href="/" className="font-mono font-bold text-blue-400 tracking-tight text-lg">
           karolespiritu<span className="text-neutral-500">@devops</span>
         </Link>
-        <ul className="flex gap-1">
+        <ul className="flex flex-wrap gap-1">
           {links.map(({ href, label }) => {
             const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
             return (
