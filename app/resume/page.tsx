@@ -79,8 +79,8 @@ export default function ResumePage() {
         <h2 className="text-sm font-mono text-neutral-500 uppercase tracking-widest">Skills</h2>
         <div className="space-y-3">
           {Object.entries(skills).map(([category, items]) => (
-            <div key={category} className="flex flex-wrap gap-x-4 gap-y-1 items-baseline">
-              <span className="text-xs font-mono text-neutral-500 w-44 shrink-0">{category}</span>
+            <div key={category} className="space-y-1.5">
+              <span className="text-xs font-mono text-neutral-500">{category}</span>
               <div className="flex flex-wrap gap-1.5">
                 {items.map((item) => (
                   <span
