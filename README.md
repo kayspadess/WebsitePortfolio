@@ -2,15 +2,16 @@
 
 My personal portfolio website showcasing my projects, skills, and experience as an aspiring DevOps engineer.
 
-🌐 **Live Site:** [karolespiritu.vercel.app](https://website-portfolio-three-eosin.vercel.app)
+🌐 **Live Site:** [website-portfolio-three-eosin.vercel.app](https://website-portfolio-three-eosin.vercel.app)
 
 ---
 
 ## 🛠️ Built With
 
-- **Next.js** — React framework for production
+- **Next.js 16** — React framework for production
+- **React 19** — UI library
 - **TypeScript** — Strongly typed JavaScript
-- **Tailwind CSS** — Utility-first CSS framework
+- **Tailwind CSS 4** — Utility-first CSS framework
 - **Supabase** — Backend and database
 - **Vercel** — Deployment and hosting
 
@@ -36,11 +37,16 @@ My personal portfolio website showcasing my projects, skills, and experience as 
 ```bash
    npm install
 ```
-4. Run the development server
+4. Set up environment variables — create a `.env.local` file and add your Supabase credentials
+```
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+5. Run the development server
 ```bash
    npm run dev
 ```
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ---
 
