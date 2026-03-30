@@ -25,7 +25,7 @@ export default function AboutPage() {
           Current Stack
         </h2>
         <div className="flex flex-wrap gap-2">
-          {["Kubernetes", "Terraform", "AWS", "Docker", "GitHub Actions", "Linux", "Python", "Ansible"].map(
+          {["TypeScript", "JavaScript", "CSS", "Kotlin", "Next.js", "React", "Tailwind CSS", "Android Studio", "Jetpack Compose", "MVVM Architecture", "Room Database", "Room Database", "DataStore", "Android ViewModel", "StateFlow", "Gradle", "Git", "GitHub", "Linux", "SSH", "SQL"].map(
             (tool) => (
               <span
                 key={tool}
