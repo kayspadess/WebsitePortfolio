@@ -44,7 +44,7 @@ export default function AboutPage() {
         </h2>
         <div className="flex gap-4 text-sm">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/kayspadess"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-400 hover:underline font-mono"
@@ -52,7 +52,7 @@ export default function AboutPage() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/karol-espiritu-a57b9b35a/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-400 hover:underline font-mono"
