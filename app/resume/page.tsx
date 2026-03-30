@@ -24,10 +24,15 @@ const experience = [
 ];
 
 const skills = {
-  "IT & Systems": ["AWS", "GCP", "Terraform", "Ansible", "Packer"],
-  "Support & Operations": ["Docker", "Kubernetes", "Helm", "ArgoCD"],
-  "Tools & Technologies": ["GitHub Actions", "GitLab CI", "Jenkins"],
-  "Languages": ["Prometheus", "Grafana", "Loki", "Datadog"],
+  "Languages": ["TypeScript", "JavaScript", "Kotlin", "Python", "R", "SQL"],
+  "Frameworks & Libraries": ["Next.js", "React", "Jetpack Compose"],
+  "Mobile Development": ["Android Studio", "MVVM Architecture", "Room Database", "DataStore", "ViewModel", "StateFlow", "Coroutines"],
+  "Web & Development": ["Tailwind CSS", "Vercel", "Supabase"],
+  "Tools & Version Control": ["Git", "Linux", "Windows", "macOS"],
+  "IT & Systems": ["Git", "GitHub", "Gradle"],
+  "Hardware": ["Hardware & Software Troubleshooting", "Tier 1 IT Support", "Windows OS", "Linux", "SSH", "Basic Networking", "System Maitenance", "Peripheral Setup & Configuration"],
+  "AV & Event Tech": ["Digital Soundboards", "Lighting Consoles", "Graphics Software", "Live Streaming Software", "AV System Setup & Teardown"],
+  "Other" : ["QA Testing", "Technical Documentation", "UI/UX Design", "Data Entry", "Shell Scripting", "Team Management"],
 };
 
 export default function ResumePage() {
