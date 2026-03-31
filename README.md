@@ -1,73 +1,70 @@
-# Karol Espiritu — Portfolio Website
+# Karol Espiritu — DevOps Portfolio
 
-My personal portfolio website showcasing my projects, skills, and experience as an aspiring DevOps engineer.
+Personal portfolio and blog site built with Next.js, Tailwind CSS, and Supabase.
 
-🌐 **Live Site:** [website-portfolio-three-eosin.vercel.app](https://website-portfolio-three-eosin.vercel.app)
+Live at: [karolespiritu.vercel.app](https://karolespiritu.vercel.app)
 
----
+## Pages
 
-## 🛠️ Built With
+| Route | Description |
+|-------|-------------|
+| `/` | About me, current stack, and links |
+| `/resume` | Work experience, skills, and PDF download |
+| `/projects` | Project cards with tags, status, and repo links |
+| `/qualifications` | Education, certifications, and courses |
+| `/blog` | List of blog posts fetched from Supabase |
+| `/blog/[slug]` | Individual blog post rendered from Markdown |
+| `/blog/new` | Password-protected post editor |
 
-- **Next.js 16** — React framework for production
-- **React 19** — UI library
-- **TypeScript** — Strongly typed JavaScript
-- **Tailwind CSS 4** — Utility-first CSS framework
-- **Supabase** — Backend and database
-- **Vercel** — Deployment and hosting
+## Tech Stack
 
----
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS v4
+- **Database:** Supabase (blog posts)
+- **Deployment:** Vercel
 
-## 🚀 Getting Started
+## Running Locally
 
-### Prerequisites
-- Node.js
-- npm
-
-### Installation
-
-1. Clone the repository
-```bash
-   git clone https://github.com/kayspadess/WebsitePortfolio.git
-```
-2. Navigate to the project directory
-```bash
-   cd WebsitePortfolio
-```
-3. Install dependencies
-```bash
+1. Clone the repo
+2. Install dependencies:
+   ```bash
    npm install
-```
-4. Set up environment variables — create a `.env.local` file and add your Supabase credentials
-```
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   ```
+3. Create a `.env.local` file in the root:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-5. Run the development server
-```bash
+   BLOG_PASSWORD=your_blog_password
+   ```
+4. Run the dev server:
+   ```bash
    npm run dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000)
+
+## Blog
+
+Posts are stored in Supabase with the following schema:
+
+```sql
+create table posts (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  slug text not null unique,
+  excerpt text,
+  content text not null,
+  tags text[],
+  published_at timestamptz default now()
+);
 ```
-6. Open [http://localhost:3000](http://localhost:3000) in your browser
 
----
+To write a new post, go to `/blog/new` and enter your blog password. Posts are written in Markdown and rendered on the post page.
 
-## 📁 Project Structure
-```
-├── app/            # Next.js app router pages
-├── components/     # Reusable UI components
-├── lib/            # Utility functions and helpers
-├── posts/          # Blog or project post content
-├── public/         # Static assets
-```
+## Deployment
 
----
+Hosted on Vercel. Every push to `main` triggers an automatic redeploy.
 
-## 👤 About Me
-
-Computer Science student at Cal State San Bernardino graduating May 2026, pursuing a career in DevOps engineering.
-
----
-
-## 📬 Contact
-
-- **Email:** karolm.espiritu@gmail.com
-- **GitHub:** [@kayspadess](https://github.com/kayspadess)
+Add the following environment variables in Vercel project settings:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `BLOG_PASSWORD`
