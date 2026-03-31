@@ -5,6 +5,7 @@ const experience = [
     period: "March 2026 – Present",
     bullets: [
       "Inspected and tested gaming peripherals from brands including but not limited to Razer, SteelSeries, Glorious, and Pulsar, verifying key functions including DPI accuracy, connectivity, and button response.",
+      "Logged tested products into company SQL database, capturing SKU, model, condition, and test results to maintain accurate inventory records.",
       "Prepared and packaged gaming peripherals to shipping standards, ensuring products were protected and ready for transit.",
       "Coordinated handoff of processed inventory to the shipping department, supporting timely and accurate order fulfillment.",
       "Applied working knowledge of current gaming peripheral models and specifications to efficiently sort, assess, and process incoming products.",
@@ -42,7 +43,7 @@ export default function ResumePage() {
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">Resume</h1>
         <a
-          href="/resume.pdf"
+          href="/Resume - Karol Espiritu.pdf"
           className="text-sm font-mono text-blue-400 border border-blue-400/30 px-3 py-1.5 rounded hover:bg-blue-400/10 transition-colors"
         >
           Download PDF
