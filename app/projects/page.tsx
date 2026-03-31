@@ -8,19 +8,19 @@ const projects = [
     status: "active",
   },
   {
-    name: "CI/CD Pipeline Template",
+    name: "Linux Homelab & Infrastructure",
     description:
-      "Reusable GitHub Actions workflow templates for containerized applications — build, test, scan, and deploy to EKS.",
-    tags: ["GitHub Actions", "Docker", "AWS EKS", "Trivy"],
+      "Refurbished server setup with Linux OS, containerization, and automation.",
+    tags: ["Linux", "Docker", "SSH", "Basic Networking", "System Maintenance"],
     repo: "https://github.com/yourusername/cicd-templates",
     status: "active",
   },
   {
-    name: "Terraform AWS Baseline",
+    name: "HabitGotchi",
     description:
-      "Opinionated Terraform modules for bootstrapping a secure AWS landing zone: VPC, IAM roles, CloudTrail, and S3 backend.",
-    tags: ["Terraform", "AWS", "IaC"],
-    repo: "https://github.com/yourusername/tf-aws-baseline",
+      "A wellness-based Tamagotchi habit tracker built in Kotlin with Jetpack Compose.",
+    tags: ["Kotlin", "Jetpack Compose", "Android Studio"],
+    repo: "https://github.com/ASpoonfulOfSalt/tamagotchi-app",
     status: "archived",
   },
 ];
