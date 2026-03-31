@@ -23,6 +23,18 @@ const experience = [
       "Deliver clear, customer-focused technical assistance to students and faculty, translating technical concepts into understandable solutions.",
     ],
   },
+  {
+    company: "Water of Life Community Church",
+    role: "Tech Student Team Lead",
+    period: "April 2016 - August 2025",
+    bullets: [
+      "Operate and support AV systems including didital soundboards, lighting consoles, and graphics software for live events and broadcasts.",
+      "Troubleshoot Technical issues in real time under time-sensitive conditions, ensuring uninterrupted services.",
+      "Assist with system setup, configuration, teardown, and equipment maintenance before and after events.",
+      "Collaborate with technical staff to document procedures and imporve setup efficiency for recurring events.",
+      "Led and coordinated tech team members, delegating responsibilites and collaborating with staff to document procedures and improve setup efficiency for recurring events.",
+    ],
+  },
 ];
 
 const skills = {
