@@ -4,9 +4,10 @@ const experience = [
     role: "Gaming Peripheral Tester",
     period: "March 2026 – Present",
     bullets: [
-      "Managed Kubernetes clusters on AWS EKS serving X microservices",
-      "Reduced deployment time by X% by building CI/CD pipelines with GitHub Actions",
-      "Wrote Terraform modules for VPC, EKS, and RDS infrastructure",
+      "Inspected and tested gaming peripherals from brands including but not limited to Razer, SteelSeries, Glorious, and Pulsar, verifying key functions including DPI accuracy, connectivity, and button response.",
+      "Prepared and packaged gaming peripherals to shipping standards, ensuring products were protected and ready for transit.",
+      "Coordinated handoff of processed inventory to the shipping department, supporting timely and accurate order fulfillment.",
+      "Applied working knowledge of current gaming peripheral models and specifications to efficiently sort, assess, and process incoming products.",
     ],
   },
   {
