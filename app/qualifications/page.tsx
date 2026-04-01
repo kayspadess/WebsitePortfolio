@@ -31,8 +31,8 @@ const education = [
 ];
 
 const courses = [
-  { name: "Linux Foundation: Introduction to Kubernetes", year: "2022" },
-  { name: "A Cloud Guru: AWS DevOps Engineer Professional", year: "2023" },
+  { name: "DataCamp: Introduction to SQL", year: "2025" },
+  { name: "DataCamp: Intermediate SQL", year: "2025" },
 ];
 
 export default function CredentialsPage() {
