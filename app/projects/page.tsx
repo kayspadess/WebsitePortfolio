@@ -1,10 +1,10 @@
 const projects = [
   {
-    name: "K8s Homelab Cluster",
+    name: "Website Portfolio",
     description:
-      "Self-hosted Kubernetes cluster running on bare metal. Includes Flux GitOps, cert-manager, ingress-nginx, and a full observability stack.",
-    tags: ["Kubernetes", "FluxCD", "Terraform", "Proxmox"],
-    repo: "https://github.com/yourusername/homelab",
+      "A responsive website showcasing my projects and skills.",
+    tags: ["TypeScript", "Tailwind CSS", "JavaScript", "Next.js"],
+    repo: "https://github.com/kayspadess/WebsitePortfolio",
     status: "active",
   },
   {
@@ -12,7 +12,7 @@ const projects = [
     description:
       "Refurbished server setup with Linux OS, containerization, and automation.",
     tags: ["Linux", "Docker", "SSH", "Basic Networking", "System Maintenance"],
-    repo: "https://github.com/yourusername/cicd-templates",
+    repo: "https://github.com/kayspadess/Homelab",
     status: "active",
   },
   {
