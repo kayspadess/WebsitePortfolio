@@ -1,24 +1,23 @@
 const certifications = [
   {
-    name: "AWS Certified Solutions Architect – Associate",
-    issuer: "Amazon Web Services",
-    date: "2024",
-    credentialId: "XXXX-XXXX",
-    verify: "https://aws.amazon.com/verification",
+    name: "CompTIA Linux+",
+    issuer: "CompTIA",
+    status: "studying",
   },
   {
-    name: "Certified Kubernetes Administrator (CKA)",
-    issuer: "Cloud Native Computing Foundation",
-    date: "2023",
-    credentialId: "CKA-XXXX",
-    verify: "https://training.linuxfoundation.org/certification/verify/",
+    name: "AWS Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    status: "planned",
   },
   {
     name: "HashiCorp Certified: Terraform Associate",
     issuer: "HashiCorp",
-    date: "2023",
-    credentialId: "XXXX",
-    verify: "",
+    status: "planned",
+  },
+  {
+    name: "Certified Kubernetes Administrator (CKA)",
+    issuer: "Cloud Native Computing Foundation",
+    status: "planned",
   },
 ];
 
@@ -75,23 +74,14 @@ export default function CredentialsPage() {
               <div className="space-y-0.5">
                 <p className="font-medium text-neutral-100">{cert.name}</p>
                 <p className="text-sm text-neutral-400">{cert.issuer}</p>
-                {cert.credentialId && (
-                  <p className="text-xs font-mono text-neutral-600">ID: {cert.credentialId}</p>
-                )}
               </div>
-              <div className="text-right shrink-0 space-y-1">
-                <p className="text-xs font-mono text-neutral-500">{cert.date}</p>
-                {cert.verify && (
-                  <a
-                    href={cert.verify}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-blue-400 hover:underline block"
-                  >
-                    Verify
-                  </a>
-                )}
-              </div>
+              <span className={`text-xs font-mono px-2 py-0.5 rounded-full shrink-0 ${
+                cert.status === "studying"
+                  ? "text-blue-400 bg-blue-400/10"
+                  : "text-neutral-500 bg-neutral-800"
+              }`}>
+                {cert.status}
+              </span>
             </div>
           ))}
         </div>
