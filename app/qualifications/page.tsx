@@ -1,22 +1,17 @@
 const certifications = [
   {
-    name: "CompTIA Linux+",
+    name: "CompTIA A+",
     issuer: "CompTIA",
     status: "studying",
   },
   {
-    name: "AWS Cloud Practitioner",
-    issuer: "Amazon Web Services",
+    name: "CompTIA Network+",
+    issuer: "CompTIA",
     status: "planned",
   },
   {
-    name: "HashiCorp Certified: Terraform Associate",
-    issuer: "HashiCorp",
-    status: "planned",
-  },
-  {
-    name: "Certified Kubernetes Administrator (CKA)",
-    issuer: "Cloud Native Computing Foundation",
+    name: "CompTIA Security+",
+    issuer: "CompTIA",
     status: "planned",
   },
 ];
@@ -31,7 +26,7 @@ const education = [
     degree: "B.Sc. in Computer Science",
     school: "California State University, San Bernardino",
     period: "2024 – 2026",
-    notes: "Relevant coursework: Networks, Operating Systems, Distributed Systems",
+    notes: "Relevant coursework: Algorithm Analysis, Digital Logic, Contemporary Computer Architecture, Operating Systems, Networking and Security, Database Systems, Software Engineering, Numberical Computation, Computer Graphics, Intro to Artificial Intelligence, Machine Learning, Data Science, Compilers, Formal Languages & Automation, Parallel Alogrithms & Programming",
   },
 ];
 
