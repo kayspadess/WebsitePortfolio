@@ -1,4 +1,6 @@
 import { FadeIn } from "@/components/FadeIn";
+import { ExperienceCarousel } from "@/components/ExperienceCarousel";
+import { SkillsCarousel } from "@/components/SkillsCarousel";
 
 const experience = [
   {
@@ -66,57 +68,19 @@ export default function ResumePage() {
         </div>
       </FadeIn>
 
-      <section className="space-y-6">
-        <FadeIn>
+      <FadeIn>
+        <section className="space-y-4">
           <h2 className="text-sm font-mono text-slate-500 uppercase tracking-widest">Experience</h2>
-        </FadeIn>
-        {experience.map((job, i) => (
-          <FadeIn key={job.company} delay={i * 0.1}>
-            <div className="border-l-2 border-slate-700 pl-4 space-y-1">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="font-semibold text-slate-100">{job.role}</p>
-                  <p className="text-sm text-slate-400">{job.company}</p>
-                </div>
-                <span className="text-xs font-mono text-slate-500 whitespace-nowrap">{job.period}</span>
-              </div>
-              <ul className="mt-2 space-y-1">
-                {job.bullets.map((b) => (
-                  <li key={b} className="text-sm text-slate-300 flex gap-2">
-                    <span className="text-sky-400 mt-0.5">›</span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </FadeIn>
-        ))}
-      </section>
+          <ExperienceCarousel experience={experience} />
+        </section>
+      </FadeIn>
 
-      <section className="space-y-4">
-        <FadeIn>
+      <FadeIn>
+        <section className="space-y-4">
           <h2 className="text-sm font-mono text-slate-500 uppercase tracking-widest">Skills</h2>
-        </FadeIn>
-        <div className="space-y-3">
-          {Object.entries(skills).map(([category, items], i) => (
-            <FadeIn key={category} delay={i * 0.05}>
-              <div className="space-y-1.5">
-                <span className="text-xs font-mono text-slate-500">{category}</span>
-                <div className="flex flex-wrap gap-1.5">
-                  {items.map((item) => (
-                    <span
-                      key={item}
-                      className="px-2 py-0.5 bg-slate-800 border border-slate-700 rounded text-xs text-slate-300 font-mono hover:border-sky-400/50 hover:text-sky-300 hover:shadow-sm hover:shadow-sky-400/30 transition-all duration-150 cursor-default"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </section>
+          <SkillsCarousel skills={skills} />
+        </section>
+      </FadeIn>
     </div>
   );
 }
