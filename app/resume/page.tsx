@@ -99,7 +99,7 @@ export default function ResumePage() {
                 {items.map((item) => (
                   <span
                     key={item}
-                    className="px-2 py-0.5 bg-slate-800 border border-slate-700 rounded text-xs text-slate-300 font-mono"
+                    className="px-2 py-0.5 bg-slate-800 border border-slate-700 rounded text-xs text-slate-300 font-mono hover:border-sky-400/50 hover:text-sky-300 hover:shadow-sm hover:shadow-sky-400/30 transition-all duration-150 cursor-default"
                   >
                     {item}
                   </span>
