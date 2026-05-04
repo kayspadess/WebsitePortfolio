@@ -11,10 +11,20 @@ function Prompt({ command }: { command: string }) {
 export default function AboutPage() {
   return (
     <div className="space-y-10">
-      <section>
-        <Prompt command="whoami" />
-        <h1 className="text-3xl font-bold text-slate-100">Karol Espiritu</h1>
-        <p className="mt-1 text-sky-400 font-mono">DevOps Engineer</p>
+      <section className="flex flex-col sm:flex-row gap-8 items-start">
+        <div className="space-y-2">
+          <Prompt command="whoami" />
+          <h1 className="text-3xl font-bold text-slate-100">Karol Espiritu</h1>
+          <p className="mt-1 text-sky-400 font-mono">DevOps Engineer</p>
+        </div>
+
+        {/* Profile image placeholder */}
+        <div className="shrink-0 sm:ml-auto">
+          <div className="w-36 h-36 border-2 border-dashed border-slate-600 rounded-lg flex flex-col items-center justify-center gap-2 bg-slate-900/60 font-mono">
+            <span className="text-2xl font-bold text-slate-500">KE</span>
+            <span className="text-xs text-slate-600 text-center leading-tight px-2">// add photo<br/>here</span>
+          </div>
+        </div>
       </section>
 
       <section>
