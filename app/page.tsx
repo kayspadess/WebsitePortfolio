@@ -15,79 +15,79 @@ function Prompt({ command, delay = 0 }: { command: string; delay?: number }) {
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col lg:grid lg:grid-cols-[1fr_1.4fr_1fr] gap-8 lg:gap-6 lg:items-start">
+    <div className="space-y-8">
 
-      {/* LEFT — stack + links */}
-      <div className="space-y-8 min-w-0 lg:pt-8">
-        <section>
-          <Prompt command="ls stack/" delay={1600} />
-          <div className="flex flex-wrap gap-1.5">
-            {["TypeScript", "JavaScript", "CSS", "Kotlin", "Next.js", "React", "Tailwind CSS", "Android Studio", "Jetpack Compose", "MVVM Architecture", "Room Database", "DataStore", "Android ViewModel", "StateFlow", "Gradle", "Git", "GitHub", "Linux", "SSH", "SQL"].map(
-              (tool) => (
-                <span
-                  key={tool}
-                  className="px-2 py-0.5 bg-slate-800 border border-slate-700 rounded text-xs text-slate-300 font-mono hover:border-sky-400/50 hover:text-sky-300 hover:shadow-sm hover:shadow-sky-400/30 transition-all duration-150 cursor-default"
-                >
-                  {tool}
-                </span>
-              )
-            )}
-          </div>
-        </section>
+      {/* TOP — terminal full width */}
+      <section className="space-y-3">
+        <Prompt command="whoami" delay={200} />
+        <TerminalInput />
+      </section>
 
-        <section>
-          <Prompt command="cat links.txt" delay={2200} />
-          <div className="flex gap-4 text-sm">
-            <a href="https://github.com/kayspadess" target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:underline font-mono">
-              GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/karol-espiritu-a57b9b35a/" target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:underline font-mono">
-              LinkedIn
-            </a>
-          </div>
-        </section>
-      </div>
+      {/* BOTTOM — 3 columns: tags left, about middle, photo right */}
+      <div className="flex flex-col lg:grid lg:grid-cols-[1fr_1.4fr_1fr] gap-8 lg:gap-6 lg:items-start">
 
-      {/* MIDDLE — profile photo + about me */}
-      <div className="space-y-6 min-w-0">
-        <section className="flex flex-col items-center gap-3 text-center">
-          <Prompt command="whoami" delay={200} />
-          <div className="w-36 h-36 border-2 border-dashed border-slate-600 rounded-xl flex flex-col items-center justify-center gap-2 bg-slate-900/60 font-mono">
+        {/* LEFT — stack + links */}
+        <div className="space-y-8 min-w-0">
+          <section>
+            <Prompt command="ls stack/" delay={1600} />
+            <div className="flex flex-wrap gap-1.5">
+              {["TypeScript", "JavaScript", "CSS", "Kotlin", "Next.js", "React", "Tailwind CSS", "Android Studio", "Jetpack Compose", "MVVM Architecture", "Room Database", "DataStore", "Android ViewModel", "StateFlow", "Gradle", "Git", "GitHub", "Linux", "SSH", "SQL"].map(
+                (tool) => (
+                  <span
+                    key={tool}
+                    className="px-2 py-0.5 bg-slate-800 border border-slate-700 rounded text-xs text-slate-300 font-mono hover:border-sky-400/50 hover:text-sky-300 hover:shadow-sm hover:shadow-sky-400/30 transition-all duration-150 cursor-default"
+                  >
+                    {tool}
+                  </span>
+                )
+              )}
+            </div>
+          </section>
+
+          <section>
+            <Prompt command="cat links.txt" delay={2200} />
+            <div className="flex gap-4 text-sm">
+              <a href="https://github.com/kayspadess" target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:underline font-mono">
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/karol-espiritu-a57b9b35a/" target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:underline font-mono">
+                LinkedIn
+              </a>
+            </div>
+          </section>
+        </div>
+
+        {/* MIDDLE — about me */}
+        <div className="min-w-0">
+          <section>
+            <Prompt command="cat about.txt" delay={800} />
+            <div className="space-y-3 text-slate-300 leading-relaxed text-sm text-justify">
+              <p>
+                A Computer Science student at Cal State San Bernardino expecting to graduate in May 2026, with a passion for building reliable systems and a goal of becoming a DevOps engineer.
+              </p>
+              <p>
+                I have hands-on experience providing Tier 1 IT support, managing and troubleshooting high-performance systems, and working with SQL-based inventory systems. I&apos;m currently building a Linux homelab to practice SSH administration, network segmentation, storage management, and system hardening.
+              </p>
+              <p>
+                I work as a Student Assistant at <span className="font-bold text-sky-400">CSUSB&apos;s Esports Arena</span> and at <span className="font-bold text-sky-400">All Green Electronics</span>, where I test gaming peripherals and manage inventory through a SQL-based system.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        {/* RIGHT — profile photo + name */}
+        <div className="flex lg:flex-col items-center lg:items-center gap-4 lg:gap-3">
+          <div className="w-36 h-36 shrink-0 border-2 border-dashed border-slate-600 rounded-xl flex flex-col items-center justify-center gap-2 bg-slate-900/60 font-mono">
             <span className="text-2xl font-bold text-slate-500">KE</span>
-            <span className="text-xs text-slate-600 leading-tight">// add photo<br/>here</span>
+            <span className="text-xs text-slate-600 leading-tight text-center">// add photo<br/>here</span>
           </div>
-          <div>
+          <div className="lg:text-center">
             <p className="font-semibold text-slate-100 font-mono">Karol Espiritu</p>
             <p className="text-xs text-sky-400 font-mono">DevOps Engineer</p>
           </div>
-        </section>
-
-        <section>
-          <Prompt command="cat about.txt" delay={800} />
-          <div className="space-y-3 text-slate-300 leading-relaxed text-sm text-justify">
-            <p>
-              A Computer Science student at Cal State San Bernardino expecting to graduate in May 2026, with a passion for building reliable systems and a goal of becoming a DevOps engineer.
-            </p>
-            <p>
-              I have hands-on experience providing Tier 1 IT support, managing and troubleshooting high-performance systems, and working with SQL-based inventory systems. I&apos;m currently building a Linux homelab to practice SSH administration, network segmentation, storage management, and system hardening.
-            </p>
-            <p>
-              I work as a Student Assistant at <span className="font-bold text-sky-400">CSUSB&apos;s Esports Arena</span> and at <span className="font-bold text-sky-400">All Green Electronics</span>, where I test gaming peripherals and manage inventory through a SQL-based system.
-            </p>
-          </div>
-        </section>
-      </div>
-
-      {/* RIGHT — interactive terminal */}
-      <div className="space-y-3 min-w-0 lg:pt-8">
-        <div className="font-mono text-sm text-slate-500 flex items-center gap-1 select-none">
-          <span className="text-sky-400">karol@devops</span>
-          <span>:~$</span>
-          <span className="inline-block w-2 h-4 bg-sky-400 ml-1 animate-pulse" />
         </div>
-        <TerminalInput />
-      </div>
 
+      </div>
     </div>
   );
 }
