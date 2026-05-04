@@ -28,17 +28,20 @@ export default function Nav() {
           {links.map(({ href, label }) => {
             const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
             return (
-              <li key={href}>
+              <li key={href} className="relative">
                 <Link
                   href={href}
                   className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
                     active
-                      ? "bg-sky-400/10 text-sky-400"
+                      ? "text-sky-400"
                       : "text-slate-400 hover:text-slate-100"
                   }`}
                 >
                   {label}
                 </Link>
+                {active && (
+                  <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-sky-400 rounded-full" />
+                )}
               </li>
             );
           })}
