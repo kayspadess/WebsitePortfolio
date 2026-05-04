@@ -58,50 +58,50 @@ export default function NewPostPage() {
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="space-y-1">
-          <label className="text-xs font-mono text-neutral-500 uppercase tracking-widest">Password</label>
+          <label className="text-xs font-mono text-slate-500 uppercase tracking-widest">Password</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full bg-neutral-900 border border-neutral-700 rounded px-3 py-2 text-sm text-neutral-100 focus:outline-none focus:border-blue-400"
+            className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-sky-400"
           />
         </div>
 
         <div className="space-y-1">
-          <label className="text-xs font-mono text-neutral-500 uppercase tracking-widest">Title</label>
+          <label className="text-xs font-mono text-slate-500 uppercase tracking-widest">Title</label>
           <input
             type="text"
             value={title}
             onChange={(e) => handleTitleChange(e.target.value)}
             required
-            className="w-full bg-neutral-900 border border-neutral-700 rounded px-3 py-2 text-sm text-neutral-100 focus:outline-none focus:border-blue-400"
+            className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-sky-400"
           />
         </div>
 
         <div className="space-y-1">
-          <label className="text-xs font-mono text-neutral-500 uppercase tracking-widest">Slug</label>
+          <label className="text-xs font-mono text-slate-500 uppercase tracking-widest">Slug</label>
           <input
             type="text"
             value={slug}
             onChange={(e) => setSlug(e.target.value)}
             required
-            className="w-full bg-neutral-900 border border-neutral-700 rounded px-3 py-2 text-sm text-neutral-100 font-mono focus:outline-none focus:border-blue-400"
+            className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-slate-100 font-mono focus:outline-none focus:border-sky-400"
           />
         </div>
 
         <div className="space-y-1">
-          <label className="text-xs font-mono text-neutral-500 uppercase tracking-widest">Excerpt</label>
+          <label className="text-xs font-mono text-slate-500 uppercase tracking-widest">Excerpt</label>
           <input
             type="text"
             value={excerpt}
             onChange={(e) => setExcerpt(e.target.value)}
-            className="w-full bg-neutral-900 border border-neutral-700 rounded px-3 py-2 text-sm text-neutral-100 focus:outline-none focus:border-blue-400"
+            className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-sky-400"
           />
         </div>
 
         <div className="space-y-1">
-          <label className="text-xs font-mono text-neutral-500 uppercase tracking-widest">
+          <label className="text-xs font-mono text-slate-500 uppercase tracking-widest">
             Tags <span className="normal-case">(comma separated)</span>
           </label>
           <input
@@ -109,12 +109,12 @@ export default function NewPostPage() {
             value={tags}
             onChange={(e) => setTags(e.target.value)}
             placeholder="kubernetes, devops, terraform"
-            className="w-full bg-neutral-900 border border-neutral-700 rounded px-3 py-2 text-sm text-neutral-100 font-mono focus:outline-none focus:border-blue-400 placeholder:text-neutral-600"
+            className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-slate-100 font-mono focus:outline-none focus:border-sky-400 placeholder:text-slate-600"
           />
         </div>
 
         <div className="space-y-1">
-          <label className="text-xs font-mono text-neutral-500 uppercase tracking-widest">
+          <label className="text-xs font-mono text-slate-500 uppercase tracking-widest">
             Content <span className="normal-case">(Markdown)</span>
           </label>
           <textarea
@@ -122,7 +122,7 @@ export default function NewPostPage() {
             onChange={(e) => setContent(e.target.value)}
             required
             rows={18}
-            className="w-full bg-neutral-900 border border-neutral-700 rounded px-3 py-2 text-sm text-neutral-100 font-mono focus:outline-none focus:border-blue-400 resize-y"
+            className="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-sm text-slate-100 font-mono focus:outline-none focus:border-sky-400 resize-y"
           />
         </div>
 
@@ -131,7 +131,7 @@ export default function NewPostPage() {
         <button
           type="submit"
           disabled={loading}
-          className="px-5 py-2 bg-blue-500 hover:bg-blue-400 disabled:opacity-50 text-white text-sm font-medium rounded transition-colors"
+          className="px-5 py-2 bg-sky-500 hover:bg-sky-400 disabled:opacity-50 text-white text-sm font-medium rounded transition-colors"
         >
           {loading ? "Publishing…" : "Publish"}
         </button>

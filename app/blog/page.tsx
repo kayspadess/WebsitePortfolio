@@ -22,36 +22,36 @@ export default async function BlogPage() {
         <h1 className="text-2xl font-bold">Blog</h1>
         <Link
           href="/blog/new"
-          className="text-sm font-mono text-blue-400 border border-blue-400/30 px-3 py-1.5 rounded hover:bg-blue-400/10 transition-colors"
+          className="text-sm font-mono text-sky-400 border border-sky-400/30 px-3 py-1.5 rounded hover:bg-sky-400/10 transition-colors"
         >
           + New Post
         </Link>
       </div>
 
       {posts.length === 0 ? (
-        <p className="text-neutral-500 font-mono text-sm">No posts yet.</p>
+        <p className="text-slate-500 font-mono text-sm">No posts yet.</p>
       ) : (
-        <ul className="divide-y divide-neutral-800">
+        <ul className="divide-y divide-slate-800">
           {posts.map((post) => (
             <li key={post.slug} className="py-5">
               <Link href={`/blog/${post.slug}`} className="group space-y-1 block">
                 <div className="flex items-baseline justify-between gap-4">
-                  <h2 className="font-semibold text-neutral-100 group-hover:text-blue-400 transition-colors">
+                  <h2 className="font-semibold text-slate-100 group-hover:text-sky-400 transition-colors">
                     {post.title}
                   </h2>
-                  <span className="text-xs font-mono text-neutral-500 shrink-0">
+                  <span className="text-xs font-mono text-slate-500 shrink-0">
                     {new Date(post.published_at).toISOString().slice(0, 10)}
                   </span>
                 </div>
                 {post.excerpt && (
-                  <p className="text-sm text-neutral-400 leading-relaxed">{post.excerpt}</p>
+                  <p className="text-sm text-slate-400 leading-relaxed">{post.excerpt}</p>
                 )}
                 {post.tags && post.tags.length > 0 && (
                   <div className="flex gap-1.5 pt-1">
                     {post.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-xs text-neutral-400 font-mono"
+                        className="px-2 py-0.5 bg-slate-800 border border-slate-700 rounded text-xs text-slate-400 font-mono"
                       >
                         {tag}
                       </span>

@@ -56,7 +56,7 @@ export default function ResumePage() {
         <h1 className="text-2xl font-bold">Resume</h1>
         <a
           href="/Resume - Karol Espiritu.pdf"
-          className="text-sm font-mono text-blue-400 border border-blue-400/30 px-3 py-1.5 rounded hover:bg-blue-400/10 transition-colors"
+          className="text-sm font-mono text-sky-400 border border-sky-400/30 px-3 py-1.5 rounded hover:bg-sky-400/10 transition-colors"
         >
           Download PDF
         </a>
@@ -64,22 +64,22 @@ export default function ResumePage() {
 
       {/* Experience */}
       <section className="space-y-6">
-        <h2 className="text-sm font-mono text-neutral-500 uppercase tracking-widest">
+        <h2 className="text-sm font-mono text-slate-500 uppercase tracking-widest">
           Experience
         </h2>
         {experience.map((job) => (
-          <div key={job.company} className="border-l-2 border-neutral-700 pl-4 space-y-1">
+          <div key={job.company} className="border-l-2 border-slate-700 pl-4 space-y-1">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="font-semibold text-neutral-100">{job.role}</p>
-                <p className="text-sm text-neutral-400">{job.company}</p>
+                <p className="font-semibold text-slate-100">{job.role}</p>
+                <p className="text-sm text-slate-400">{job.company}</p>
               </div>
-              <span className="text-xs font-mono text-neutral-500 whitespace-nowrap">{job.period}</span>
+              <span className="text-xs font-mono text-slate-500 whitespace-nowrap">{job.period}</span>
             </div>
             <ul className="mt-2 space-y-1">
               {job.bullets.map((b) => (
-                <li key={b} className="text-sm text-neutral-300 flex gap-2">
-                  <span className="text-blue-400 mt-0.5">›</span>
+                <li key={b} className="text-sm text-slate-300 flex gap-2">
+                  <span className="text-sky-400 mt-0.5">›</span>
                   {b}
                 </li>
               ))}
@@ -90,16 +90,16 @@ export default function ResumePage() {
 
       {/* Skills */}
       <section className="space-y-4">
-        <h2 className="text-sm font-mono text-neutral-500 uppercase tracking-widest">Skills</h2>
+        <h2 className="text-sm font-mono text-slate-500 uppercase tracking-widest">Skills</h2>
         <div className="space-y-3">
           {Object.entries(skills).map(([category, items]) => (
             <div key={category} className="space-y-1.5">
-              <span className="text-xs font-mono text-neutral-500">{category}</span>
+              <span className="text-xs font-mono text-slate-500">{category}</span>
               <div className="flex flex-wrap gap-1.5">
                 {items.map((item) => (
                   <span
                     key={item}
-                    className="px-2 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-xs text-neutral-300 font-mono"
+                    className="px-2 py-0.5 bg-slate-800 border border-slate-700 rounded text-xs text-slate-300 font-mono"
                   >
                     {item}
                   </span>
