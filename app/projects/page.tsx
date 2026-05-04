@@ -26,9 +26,9 @@ const projects = [
 ];
 
 const statusColor: Record<string, string> = {
-  active: "text-blue-400 bg-blue-400/10",
+  active: "text-sky-400 bg-sky-400/10",
   wip: "text-yellow-400 bg-yellow-400/10",
-  archived: "text-neutral-500 bg-neutral-800",
+  archived: "text-slate-500 bg-slate-800",
 };
 
 export default function ProjectsPage() {
@@ -39,38 +39,45 @@ export default function ProjectsPage() {
         {projects.map((project) => (
           <div
             key={project.name}
-            className="border border-neutral-800 rounded-lg p-5 space-y-3 hover:border-neutral-600 transition-colors"
+            className="border border-slate-700 rounded-lg overflow-hidden hover:border-sky-400/40 transition-colors bg-slate-900"
           >
-            <div className="flex items-start justify-between gap-3">
-              <h2 className="font-semibold text-neutral-100">{project.name}</h2>
-              <span
-                className={`text-xs font-mono px-2 py-0.5 rounded-full shrink-0 ${statusColor[project.status]}`}
-              >
-                {project.status}
-              </span>
+            {/* Terminal window chrome */}
+            <div className="flex items-center gap-1.5 px-4 py-2.5 bg-slate-800 border-b border-slate-700">
+              <span className="w-3 h-3 rounded-full bg-red-500/70" />
+              <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
+              <span className="w-3 h-3 rounded-full bg-sky-500/70" />
+              <span className="ml-2 text-xs font-mono text-slate-500">{project.name.toLowerCase().replace(/\s+/g, "-")}</span>
             </div>
-            <p className="text-sm text-neutral-400 leading-relaxed">{project.description}</p>
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex flex-wrap gap-1.5">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-xs text-neutral-300 font-mono"
-                  >
-                    {tag}
-                  </span>
-                ))}
+            <div className="p-5 space-y-3">
+              <div className="flex items-start justify-between gap-3">
+                <h2 className="font-semibold text-slate-100">{project.name}</h2>
+                <span className={`text-xs font-mono px-2 py-0.5 rounded-full shrink-0 ${statusColor[project.status]}`}>
+                  {project.status}
+                </span>
               </div>
-              {project.repo && (
-                <a
-                  href={project.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-blue-400 hover:underline font-mono shrink-0"
-                >
-                  View →
-                </a>
-              )}
+              <p className="text-sm text-slate-400 leading-relaxed">{project.description}</p>
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2 py-0.5 bg-slate-800 border border-slate-700 rounded text-xs text-slate-300 font-mono"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                {project.repo && (
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-sky-400 hover:underline font-mono shrink-0"
+                  >
+                    View →
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ))}
