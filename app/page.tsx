@@ -15,31 +15,10 @@ function Prompt({ command, delay = 0 }: { command: string; delay?: number }) {
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col lg:grid lg:grid-cols-[2fr_auto_2fr] gap-8 lg:gap-6 lg:items-start">
+    <div className="flex flex-col lg:grid lg:grid-cols-[1fr_1.4fr_1fr] gap-8 lg:gap-6 lg:items-start">
 
-      {/* LEFT — text content */}
-      <div className="space-y-8 min-w-0">
-        <section>
-          <Prompt command="whoami" delay={200} />
-          <h1 className="text-2xl font-bold text-slate-100">Karol Espiritu</h1>
-          <p className="mt-1 text-sky-400 font-mono text-sm">DevOps Engineer</p>
-        </section>
-
-        <section>
-          <Prompt command="cat about.txt" delay={800} />
-          <div className="space-y-3 text-slate-300 leading-relaxed text-sm text-justify">
-            <p>
-              A Computer Science student at Cal State San Bernardino expecting to graduate in May 2026, with a passion for building reliable systems and a goal of becoming a DevOps engineer.
-            </p>
-            <p>
-              I have hands-on experience providing Tier 1 IT support, managing and troubleshooting high-performance systems, and working with SQL-based inventory systems. I&apos;m currently building a Linux homelab to practice SSH administration, network segmentation, storage management, and system hardening.
-            </p>
-            <p>
-              I work as a Student Assistant at <span className="font-bold text-sky-400">CSUSB&apos;s Esports Arena</span> and at <span className="font-bold text-sky-400">All Green Electronics</span>, where I test gaming peripherals and manage inventory through a SQL-based system.
-            </p>
-          </div>
-        </section>
-
+      {/* LEFT — stack + links */}
+      <div className="space-y-8 min-w-0 lg:pt-8">
         <section>
           <Prompt command="ls stack/" delay={1600} />
           <div className="flex flex-wrap gap-1.5">
@@ -69,16 +48,34 @@ export default function AboutPage() {
         </section>
       </div>
 
-      {/* MIDDLE — profile photo + name */}
-      <div className="flex lg:flex-col items-center gap-4 lg:gap-3 lg:pt-8">
-        <div className="w-32 h-32 lg:w-40 lg:h-40 shrink-0 border-2 border-dashed border-slate-600 rounded-xl flex flex-col items-center justify-center gap-2 bg-slate-900/60 font-mono">
-          <span className="text-2xl font-bold text-slate-500">KE</span>
-          <span className="text-xs text-slate-600 text-center leading-tight px-2">// add photo<br/>here</span>
-        </div>
-        <div className="lg:text-center">
-          <p className="font-semibold text-slate-100 font-mono text-sm">Karol Espiritu</p>
-          <p className="text-xs text-sky-400 font-mono">DevOps Engineer</p>
-        </div>
+      {/* MIDDLE — profile photo + about me */}
+      <div className="space-y-6 min-w-0">
+        <section className="flex flex-col items-center gap-3 text-center">
+          <Prompt command="whoami" delay={200} />
+          <div className="w-36 h-36 border-2 border-dashed border-slate-600 rounded-xl flex flex-col items-center justify-center gap-2 bg-slate-900/60 font-mono">
+            <span className="text-2xl font-bold text-slate-500">KE</span>
+            <span className="text-xs text-slate-600 leading-tight">// add photo<br/>here</span>
+          </div>
+          <div>
+            <p className="font-semibold text-slate-100 font-mono">Karol Espiritu</p>
+            <p className="text-xs text-sky-400 font-mono">DevOps Engineer</p>
+          </div>
+        </section>
+
+        <section>
+          <Prompt command="cat about.txt" delay={800} />
+          <div className="space-y-3 text-slate-300 leading-relaxed text-sm text-justify">
+            <p>
+              A Computer Science student at Cal State San Bernardino expecting to graduate in May 2026, with a passion for building reliable systems and a goal of becoming a DevOps engineer.
+            </p>
+            <p>
+              I have hands-on experience providing Tier 1 IT support, managing and troubleshooting high-performance systems, and working with SQL-based inventory systems. I&apos;m currently building a Linux homelab to practice SSH administration, network segmentation, storage management, and system hardening.
+            </p>
+            <p>
+              I work as a Student Assistant at <span className="font-bold text-sky-400">CSUSB&apos;s Esports Arena</span> and at <span className="font-bold text-sky-400">All Green Electronics</span>, where I test gaming peripherals and manage inventory through a SQL-based system.
+            </p>
+          </div>
+        </section>
       </div>
 
       {/* RIGHT — interactive terminal */}
