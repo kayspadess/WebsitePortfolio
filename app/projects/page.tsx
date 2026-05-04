@@ -39,7 +39,7 @@ export default function ProjectsPage() {
         {projects.map((project) => (
           <div
             key={project.name}
-            className="border border-slate-700 rounded-lg overflow-hidden hover:border-sky-400/40 transition-colors bg-slate-900"
+            className="border border-slate-700 rounded-lg overflow-hidden hover:border-sky-400/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-sky-400/10 transition-all duration-200 bg-slate-900"
           >
             {/* Terminal window chrome */}
             <div className="flex items-center gap-1.5 px-4 py-2.5 bg-slate-800 border-b border-slate-700">
