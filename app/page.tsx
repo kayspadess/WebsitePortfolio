@@ -1,9 +1,13 @@
-function Prompt({ command }: { command: string }) {
+import { TypedText } from "@/components/TypedText";
+
+function Prompt({ command, delay = 0 }: { command: string; delay?: number }) {
   return (
     <div className="font-mono text-sm text-slate-500 mb-3 select-none">
       <span className="text-sky-400">karol@devops</span>
       <span>:~$ </span>
-      <span className="text-slate-300">{command}</span>
+      <span className="text-slate-300">
+        <TypedText text={command} delay={delay} />
+      </span>
     </div>
   );
 }
@@ -13,12 +17,11 @@ export default function AboutPage() {
     <div className="space-y-10">
       <section className="flex flex-col sm:flex-row gap-8 items-start">
         <div className="space-y-2">
-          <Prompt command="whoami" />
+          <Prompt command="whoami" delay={200} />
           <h1 className="text-3xl font-bold text-slate-100">Karol Espiritu</h1>
           <p className="mt-1 text-sky-400 font-mono">DevOps Engineer</p>
         </div>
 
-        {/* Profile image placeholder */}
         <div className="shrink-0 sm:ml-auto">
           <div className="w-36 h-36 border-2 border-dashed border-slate-600 rounded-lg flex flex-col items-center justify-center gap-2 bg-slate-900/60 font-mono">
             <span className="text-2xl font-bold text-slate-500">KE</span>
@@ -28,7 +31,7 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <Prompt command="cat about.txt" />
+        <Prompt command="cat about.txt" delay={800} />
         <div className="space-y-3 text-slate-300 leading-relaxed max-w-2xl text-justify">
           <p>
             A Computer Science student at Cal State San Bernardino expecting to graduate in May 2026, with a passion for building reliable systems and a goal of becoming a DevOps engineer.
@@ -43,7 +46,7 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <Prompt command="ls stack/" />
+        <Prompt command="ls stack/" delay={1600} />
         <div className="flex flex-wrap gap-2">
           {["TypeScript", "JavaScript", "CSS", "Kotlin", "Next.js", "React", "Tailwind CSS", "Android Studio", "Jetpack Compose", "MVVM Architecture", "Room Database", "DataStore", "Android ViewModel", "StateFlow", "Gradle", "Git", "GitHub", "Linux", "SSH", "SQL"].map(
             (tool) => (
@@ -59,22 +62,12 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <Prompt command="cat links.txt" />
+        <Prompt command="cat links.txt" delay={2200} />
         <div className="flex gap-4 text-sm">
-          <a
-            href="https://github.com/kayspadess"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sky-400 hover:underline font-mono"
-          >
+          <a href="https://github.com/kayspadess" target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:underline font-mono">
             GitHub
           </a>
-          <a
-            href="https://www.linkedin.com/in/karol-espiritu-a57b9b35a/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sky-400 hover:underline font-mono"
-          >
+          <a href="https://www.linkedin.com/in/karol-espiritu-a57b9b35a/" target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:underline font-mono">
             LinkedIn
           </a>
         </div>
