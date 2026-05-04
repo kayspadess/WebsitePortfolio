@@ -1,4 +1,5 @@
 import { TypedText } from "@/components/TypedText";
+import { TerminalInput } from "@/components/TerminalInput";
 
 function Prompt({ command, delay = 0 }: { command: string; delay?: number }) {
   return (
@@ -73,12 +74,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section>
+      <section className="space-y-3">
         <div className="font-mono text-sm text-slate-500 flex items-center gap-1 select-none">
           <span className="text-sky-400">karol@devops</span>
           <span>:~$</span>
           <span className="inline-block w-2 h-4 bg-sky-400 ml-1 animate-pulse" />
         </div>
+        <TerminalInput />
       </section>
     </div>
   );
