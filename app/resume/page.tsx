@@ -1,3 +1,5 @@
+import { FadeIn } from "@/components/FadeIn";
+
 const experience = [
   {
     company: "All Green Electronics",
@@ -28,11 +30,11 @@ const experience = [
     role: "Tech Student Team Lead",
     period: "April 2016 - August 2025",
     bullets: [
-      "Operate and support AV systems including didital soundboards, lighting consoles, and graphics software for live events and broadcasts.",
-      "Troubleshoot Technical issues in real time under time-sensitive conditions, ensuring uninterrupted services.",
+      "Operate and support AV systems including digital soundboards, lighting consoles, and graphics software for live events and broadcasts.",
+      "Troubleshoot technical issues in real time under time-sensitive conditions, ensuring uninterrupted services.",
       "Assist with system setup, configuration, teardown, and equipment maintenance before and after events.",
-      "Collaborate with technical staff to document procedures and imporve setup efficiency for recurring events.",
-      "Led and coordinated tech team members, delegating responsibilites and collaborating with staff to document procedures and improve setup efficiency for recurring events.",
+      "Collaborate with technical staff to document procedures and improve setup efficiency for recurring events.",
+      "Led and coordinated tech team members, delegating responsibilities and collaborating with staff to improve setup efficiency for recurring events.",
     ],
   },
 ];
@@ -44,68 +46,74 @@ const skills = {
   "Web & Development": ["Tailwind CSS", "Vercel", "Supabase"],
   "Tools & Version Control": ["Git", "Linux", "Windows", "macOS"],
   "IT & Systems": ["Git", "GitHub", "Gradle"],
-  "Hardware": ["Hardware & Software Troubleshooting", "Tier 1 IT Support", "Windows OS", "Linux", "SSH", "Basic Networking", "System Maitenance", "Peripheral Setup & Configuration"],
+  "Hardware": ["Hardware & Software Troubleshooting", "Tier 1 IT Support", "Windows OS", "Linux", "SSH", "Basic Networking", "System Maintenance", "Peripheral Setup & Configuration"],
   "AV & Event Tech": ["Digital Soundboards", "Lighting Consoles", "Graphics Software", "Live Streaming Software", "AV System Setup & Teardown"],
-  "Other" : ["QA Testing", "Technical Documentation", "UI/UX Design", "Data Entry", "Shell Scripting", "Team Management"],
+  "Other": ["QA Testing", "Technical Documentation", "UI/UX Design", "Data Entry", "Shell Scripting", "Team Management"],
 };
 
 export default function ResumePage() {
   return (
     <div className="space-y-10">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Resume</h1>
-        <a
-          href="/Resume - Karol Espiritu.pdf"
-          className="text-sm font-mono text-sky-400 border border-sky-400/30 px-3 py-1.5 rounded hover:bg-sky-400/10 transition-colors"
-        >
-          Download PDF
-        </a>
-      </div>
+      <FadeIn>
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl font-bold">Resume</h1>
+          <a
+            href="/Resume - Karol Espiritu.pdf"
+            className="text-sm font-mono text-sky-400 border border-sky-400/30 px-3 py-1.5 rounded hover:bg-sky-400/10 transition-colors"
+          >
+            Download PDF
+          </a>
+        </div>
+      </FadeIn>
 
-      {/* Experience */}
       <section className="space-y-6">
-        <h2 className="text-sm font-mono text-slate-500 uppercase tracking-widest">
-          Experience
-        </h2>
-        {experience.map((job) => (
-          <div key={job.company} className="border-l-2 border-slate-700 pl-4 space-y-1">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="font-semibold text-slate-100">{job.role}</p>
-                <p className="text-sm text-slate-400">{job.company}</p>
+        <FadeIn>
+          <h2 className="text-sm font-mono text-slate-500 uppercase tracking-widest">Experience</h2>
+        </FadeIn>
+        {experience.map((job, i) => (
+          <FadeIn key={job.company} delay={i * 0.1}>
+            <div className="border-l-2 border-slate-700 pl-4 space-y-1">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="font-semibold text-slate-100">{job.role}</p>
+                  <p className="text-sm text-slate-400">{job.company}</p>
+                </div>
+                <span className="text-xs font-mono text-slate-500 whitespace-nowrap">{job.period}</span>
               </div>
-              <span className="text-xs font-mono text-slate-500 whitespace-nowrap">{job.period}</span>
+              <ul className="mt-2 space-y-1">
+                {job.bullets.map((b) => (
+                  <li key={b} className="text-sm text-slate-300 flex gap-2">
+                    <span className="text-sky-400 mt-0.5">›</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="mt-2 space-y-1">
-              {job.bullets.map((b) => (
-                <li key={b} className="text-sm text-slate-300 flex gap-2">
-                  <span className="text-sky-400 mt-0.5">›</span>
-                  {b}
-                </li>
-              ))}
-            </ul>
-          </div>
+          </FadeIn>
         ))}
       </section>
 
-      {/* Skills */}
       <section className="space-y-4">
-        <h2 className="text-sm font-mono text-slate-500 uppercase tracking-widest">Skills</h2>
+        <FadeIn>
+          <h2 className="text-sm font-mono text-slate-500 uppercase tracking-widest">Skills</h2>
+        </FadeIn>
         <div className="space-y-3">
-          {Object.entries(skills).map(([category, items]) => (
-            <div key={category} className="space-y-1.5">
-              <span className="text-xs font-mono text-slate-500">{category}</span>
-              <div className="flex flex-wrap gap-1.5">
-                {items.map((item) => (
-                  <span
-                    key={item}
-                    className="px-2 py-0.5 bg-slate-800 border border-slate-700 rounded text-xs text-slate-300 font-mono"
-                  >
-                    {item}
-                  </span>
-                ))}
+          {Object.entries(skills).map(([category, items], i) => (
+            <FadeIn key={category} delay={i * 0.05}>
+              <div className="space-y-1.5">
+                <span className="text-xs font-mono text-slate-500">{category}</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {items.map((item) => (
+                    <span
+                      key={item}
+                      className="px-2 py-0.5 bg-slate-800 border border-slate-700 rounded text-xs text-slate-300 font-mono hover:border-sky-400/50 hover:text-sky-300 hover:shadow-sm hover:shadow-sky-400/30 transition-all duration-150 cursor-default"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </section>

@@ -52,7 +52,7 @@ export default function AboutPage() {
             (tool) => (
               <span
                 key={tool}
-                className="px-3 py-1 bg-slate-800 border border-slate-700 rounded text-sm text-slate-300 font-mono"
+                className="px-3 py-1 bg-slate-800 border border-slate-700 rounded text-sm text-slate-300 font-mono hover:border-sky-400/50 hover:text-sky-300 hover:shadow-sm hover:shadow-sky-400/30 transition-all duration-150 cursor-default"
               >
                 {tool}
               </span>
